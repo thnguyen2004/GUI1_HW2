@@ -2,7 +2,9 @@ header, hgroup, nav, footer, figure, figcaption, aside, section, article {
 	display: block;
 }
 body {
-	background-color: ;
+	background-image: url("ptrbackground.jpg");
+    background-position: center;
+	background-color: #00569f;
 	color: #666666;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -17,8 +19,11 @@ nav a:hover {
 	color: #FFFFFF;
 }
 h1 {
+	margin-top: 0;
 	margin-bottom: 0;
 	padding: 10px;
+	color: white;
+	font-size: 40px;
 }
 h2 {
 	color: #3399CC;
@@ -35,5 +40,64 @@ dt {
 }
 footer {
 	font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Reference for grid styling: https://www.w3schools.com/css/css_grid.asp */
+#wrapper {
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"nav content"
+		"nav footer";
+  	grid-template-columns: 0.7fr 3.3fr;
+	width: 80%;
+	min-width: 600px;
+	justify-self: center;
+	background-color: white;
+}
+
+#wrapper > header {
+	grid-area: header;
+}
+
+#wrapper > nav {
+	grid-area: nav;
+}
+
+#wrapper > #content {
+	grid-area: content;
+}
+
+#wrapper > footer {
+	grid-area: footer;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	background-image: url("sunset.jpg");
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: contain;
+	background-color: #000033;
+	height: 70px;
+}
+
+nav {
+	background-color: skyblue;
+	padding: 20px;
+}
+
+a {
+	text-decoration: none;
+	list-style: unset;
+}
+
+#content {
+	padding: 20px;
+}
+
+footer {
+	padding: 20px;
 }
 
